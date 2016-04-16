@@ -9,8 +9,6 @@ var url =   'mongodb://test123:test123@ds030829.mlab.com:30829/dchackathon';
 //We need to work with "MongoClient" interface in order to connect to a mongodb server.
 var MongoClient = mongodb.MongoClient;
 
-require('./connect');
-
 http.createServer(function(request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
     response.write('Connecting \n');
