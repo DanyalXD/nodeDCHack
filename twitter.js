@@ -1,7 +1,7 @@
 var Twitter = require('twitter');
 var http = require('http');
 var port = process.env.PORT || 1337;
-var x = getCookie("name");
+var x = getCookie("emotionLevel");
 
 //you need to put your own keys in here
 var client = new Twitter({
