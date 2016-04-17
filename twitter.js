@@ -15,8 +15,8 @@ http.createServer(function(request, response) {
     //search for 10 tweets containing lolcats
     var tags = ["cats", "dogs", "music"];
 
-    while(i < tags.length()){
-        client.get('search/tweets', {q: tags[i].value, count: '10'},  function(error, tweets){
+    while(i <= tags.length()){
+        client.get('search/tweets', {q: tags[i], count: '10'},  function(error, tweets){
 
         var json = [];
 
