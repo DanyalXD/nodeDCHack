@@ -1,4 +1,3 @@
-
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -27,7 +26,7 @@ http.createServer(function(request, response) {
     response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'  });
     //search for 10 tweets containing lolcats
     var x = getCookie("emotionLevel");
-    aconsol.log(x);
+    console.log(x);
     client.get('search/tweets', {q: x , count: '10'}, function(error, tweets){
 
         var json = [];
