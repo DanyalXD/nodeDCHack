@@ -1,3 +1,5 @@
+
+a
 var Twitter = require('twitter');
 var http = require('http');
 var port = process.env.PORT || 1337;
@@ -13,7 +15,7 @@ var client = new Twitter({
 http.createServer(function(request, response) {
     response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'  });
     //search for 10 tweets containing lolcats
-    client.get('search/tweets', {q: 'lolcats' , count: '10'}, function(error, tweets){
+    client.get('search/tweets', {q: 'cute' , count: '10'}, function(error, tweets){
 
         var json = [];
         for (var i =0; i< tweets.statuses.length ; i++)
