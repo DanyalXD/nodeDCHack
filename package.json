@@ -2,8 +2,8 @@
   "name": "nodedchack",
   "version": "1.0.0",
   "dependencies": {
-    "mongodb": "*"
+    "mongodb": "*",
     "twitter": "*"
-
   }
 }
+

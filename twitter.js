@@ -5,8 +5,8 @@ var port = process.env.PORT || 1337;
 //you need to put your own keys in here
 var client = new Twitter({
     consumer_key: 'W0qmXQ9ZcZ331lRRSOH92vfoo',
-    consumer_secret: '  ursoNPsoAPgBfLaAi4UvOqSoDO89fGAXRX2GrjIpOMeXWa4LPg',
-    access_token_key: ' 389398408-Rq0ejKRxZNx1ymPIUXZwBqeBrM5MVvbeZ6RQimVa',
+    consumer_secret: 'ursoNPsoAPgBfLaAi4UvOqSoDO89fGAXRX2GrjIpOMeXWa4LPg',
+    access_token_key: '389398408-Rq0ejKRxZNx1ymPIUXZwBqeBrM5MVvbeZ6RQimVa',
     access_token_secret: '1yAmkT8CDOIr1WcklgDioEYFv5KII9ye506EeCzNFblTH'
 });
 
