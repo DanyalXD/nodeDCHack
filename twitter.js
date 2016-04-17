@@ -1,6 +1,18 @@
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
 var Twitter = require('twitter');
 var http = require('http');
 var port = process.env.PORT || 1337;
+var x = getCookie("name");
 
 //you need to put your own keys in here
 var client = new Twitter({
@@ -13,7 +25,7 @@ var client = new Twitter({
 http.createServer(function(request, response) {
     response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'  });
     //search for 10 tweets containing lolcats
-    client.get('search/tweets', {q: 'lolcats' , count: '10'}, function(error, tweets){
+    client.get('search/tweets', {q: x , count: '10'}, function(error, tweets){
 
         var json = [];
         for (var i =0; i< tweets.statuses.length ; i++)
