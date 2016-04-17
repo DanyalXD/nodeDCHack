@@ -19,6 +19,16 @@ http.createServer(function(request, response) {
         for (var i =0; i< tweets.statuses.length ; i++)
         {
             json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
+
+        }
+
+    client.get('search/tweets', {q: 'cat', count: '10'}, function(error, tweets){
+
+        var json = [];
+        for (var i =0; i< tweets.statuses.length ; i++)
+        {
+            json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
+            
         }
 
         response.end(JSON.stringify(json));
