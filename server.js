@@ -1,1 +1,1 @@
-require('./twitter.js');
+require('./connect.js');
