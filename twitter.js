@@ -13,14 +13,20 @@ var client = new Twitter({
 http.createServer(function(request, response) {
     response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'  });
     //search for 10 tweets containing lolcats
-    client.get('search/tweets', {q: 'cute', count: '10'},  function(error, tweets){
+    var tags = ["cats", "dogs", "music"];
+
+    while(i < tags.length()){
+        client.get('search/tweets', {q: tags[i], count: '10'},  function(error, tweets){
 
         var json = [];
-        for (var i =0; i< tweets.statuses.length ; i++)
-        {
-            json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
 
-        }
+            for (var i =0; i< tweets.statuses.length ; i++)
+            {
+                json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
+
+            }
+    i++;
+    }
 
         response.end(JSON.stringify(json));
     });
