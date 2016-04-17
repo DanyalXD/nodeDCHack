@@ -1,7 +1,6 @@
 var Twitter = require('twitter');
 var http = require('http');
 var port = process.env.PORT || 1337;
-var x = document.getCookie("name");
 
 //you need to put your own keys in here
 var client = new Twitter({
